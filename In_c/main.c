@@ -6,7 +6,8 @@
 
 /* Global Variables */
 char *str = NULL;
-
+char *text = NULL;
+int size;
 int main(){
     /* Initializing Global Variables */
 
@@ -21,6 +22,21 @@ int main(){
     printf("String = %s, Address of String is = %p\n", str, str);
 
     free(str);
+
+    printf("enter a number limit for text: ");
+    scanf("%d", &size);
+    /* Initial memory allocation */
+    text = (char *) malloc(size * sizeof(char));
+
+    if(text != NULL){
+        printf("Enter some text: \n");
+        scanf("%s", text);
+        // scanf(" ");
+        // gets(text);10
+        printf("You inputed: %s", text);
+    }
+
+    free(text);
     return 0;
 }
 
